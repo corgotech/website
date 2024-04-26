@@ -1,0 +1,357 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import sqsecCover from "../assets/sqsec-cover.png";
+import timsheetCover from "../assets/aegis-timesheet-cover.png";
+
+import CapitalOne from "../components/logo/CapitalOne.astro";
+import BAH from "../components/logo/BAH.astro";
+import Aegis from "../components/logo/Aegis.astro";
+import NSA from "../components/logo/NSA.astro";
+import Navbar from "../components/Navbar.astro";
+---
+
+<Layout title="Corgo">
+  <Navbar />
+  <section class="px-32 text-white pt-32">
+    <div class="flex mb-6 text-white items-center gap-4">
+      <span class="uppercase">01</span>
+      <div class="w-10 h-[1px] bg-white"></div>
+      <span class="uppercase">This is Corgo</span>
+    </div>
+    <h1 class="text-7xl">
+      Designing digital solutions with an <span
+        class="font-serif italic pr-3 text-yellow-300">extreme</span
+      > focus on humanized customer experiences.
+    </h1>
+    <p class="text-white/50 text-2xl mt-16">
+      In our eyes, there are few things as significant as the customer
+      experience when it comes to solutions. We will align with each of your
+      goals to create a personalized, impactful, and frictionless product for
+      your customers.
+    </p>
+    <br />
+    <button
+      class="relative inline-block p-px font-semibold leading-6 text-white no-underline bg-blue-900 shadow-2xl cursor-pointer group rounded-xl shadow-zinc-900 hover:-translate-y-0.5 transition-transform"
+    >
+      <span class="absolute inset-0 overflow-hidden rounded-xl">
+        <span
+          class="absolute inset-0 rounded-xl bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(42,157,143,0.6)_0%,rgba(42,157,143,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        ></span>
+      </span>
+      <div
+        class="relative z-10 flex items-center px-6 py-3 space-x-2 rounded-xl bg-blue-900/50 ring-1 ring-white/10"
+      >
+        <span>Let's connect</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          aria-hidden="true"
+          data-slot="icon"
+          class="w-6 h-6"
+          ><path
+            fill-rule="evenodd"
+            d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+            clip-rule="evenodd"></path></svg
+        >
+      </div>
+      <span
+        class="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-gray-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40"
+      ></span>
+    </button>
+  </section>
+
+  <section class="flex gap-8 justify-center mt-32 mb-48">
+    <div
+      class="p-4 rounded-xl bg-blue-900/30 ring-1 ring-white/10 shadow-lg text-blue-100/60 w-48 h-20 flex items-center"
+    >
+      <CapitalOne />
+    </div>
+    <div
+      class="p-4 rounded-xl bg-blue-900/30 ring-1 ring-white/10 shadow-lg text-blue-100/60 w-48 h-20 flex items-center"
+    >
+      <BAH />
+    </div>
+    <div
+      class="p-4 rounded-xl bg-blue-900/30 ring-1 ring-white/10 shadow-lg text-blue-100/60 w-48 h-20 flex items-center"
+    >
+      <Aegis />
+    </div>
+    <div
+      class="p-4 rounded-xl bg-blue-900/30 ring-1 ring-white/10 shadow-lg text-blue-100/60 w-48 h-20 flex items-center"
+    >
+      <NSA />
+    </div>
+  </section>
+
+  <section class="mx-10">
+    <div class="flex mb-10 text-white items-center gap-4">
+      <span class="uppercase">02</span>
+      <div class="w-10 h-[1px] bg-white"></div>
+      <span class="uppercase">Our Services</span>
+    </div>
+    <div class="grid grid-cols-3 gap-12 text-white">
+      <h2 class="text-3xl col-span-1">
+        How can we collaborate to help your business?
+      </h2>
+      <div class="flex-1 flex-col col-span-2">
+        <div class="collapse collapse-arrow">
+          <input type="checkbox" />
+          <div
+            class="collapse-title text-xl font-medium flex items-center gap-4"
+          >
+            <svg
+              width="37"
+              height="38"
+              viewBox="0 0 37 38"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18.6162 1C8.69097 1 0.616211 9.07476 0.616211 19C0.616211 28.9252 8.69097 37 18.6162 37C28.5415 37 36.6162 28.9252 36.6162 19C36.6162 9.07476 28.5415 1 18.6162 1ZM19.0499 1.87293C28.1538 2.09978 35.5164 9.46243 35.7434 18.5663H31.5343C31.3093 11.7836 25.8327 6.30683 19.0499 6.0819V1.87293ZM19.0499 6.94989C25.3545 7.17404 30.4422 12.2618 30.6663 18.5663H28.0185C27.7975 13.7208 23.8955 9.8187 19.0499 9.59784V6.94989ZM18.1825 36.1272C9.07864 35.9001 1.71599 28.5375 1.48915 19.4337H5.69811C5.92313 26.2164 11.3998 31.6931 18.1825 31.9181V36.1272ZM18.1825 27.9783V31.0501C11.734 30.8209 6.55838 25.5034 6.55838 19C6.55838 18.885 6.51268 18.7746 6.43134 18.6933C6.35 18.612 6.23968 18.5663 6.12464 18.5663H1.48915C1.71599 9.46243 9.07864 2.09978 18.1825 1.87293V19C18.1825 19.115 18.2282 19.2254 18.3095 19.3067C18.3909 19.388 18.5012 19.4337 18.6162 19.4337C18.7312 19.4337 18.8416 19.388 18.9229 19.3067C19.0042 19.2254 19.0499 19.115 19.0499 19V10.4663C23.5606 10.6929 27.1608 14.434 27.1608 19C27.1608 23.7115 23.3277 27.5446 18.6162 27.5446C18.5012 27.5446 18.3909 27.5903 18.3095 27.6716C18.2282 27.753 18.1825 27.8633 18.1825 27.9783ZM19.0499 36.1272V28.4022C23.8955 28.1813 27.7975 24.2792 28.0185 19.4337H35.7434C35.5164 28.5375 28.1538 35.9001 19.0499 36.1272Z"
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-width="0.6"></path>
+            </svg>
+            Software Development
+          </div>
+          <div class="collapse-content">
+            <p class="mb-4">
+              We offer application development services to bring your custom
+              experiences to life. Our team can create new or integrate with
+              existing codebases and CI/CD pipelines. We are very flexible and
+              are happy to adapt into however your buisness operates.
+            </p>
+          </div>
+        </div>
+        <div class="h-px w-full bg-blue-800"></div>
+        <div class="collapse collapse-arrow">
+          <input type="checkbox" />
+          <div
+            class="collapse-title text-xl font-medium flex items-center gap-4"
+          >
+            <svg
+              width="32"
+              height="38"
+              viewBox="0 0 32 38"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.1476 37C16.0326 37 15.9222 36.9543 15.8409 36.873C15.7596 36.7916 15.7139 36.6813 15.7139 36.5663V31.5289C7.49484 31.2987 0.880127 24.5411 0.880127 16.2675C0.880127 7.84894 7.72906 1 16.1476 1C16.2626 1 16.373 1.0457 16.4543 1.12704C16.5356 1.20838 16.5813 1.3187 16.5813 1.43373V6.47113C24.8003 6.70127 31.4151 13.4589 31.4151 21.7325C31.4151 30.1511 24.5661 37 16.1476 37ZM16.5813 36.1261C24.3219 35.8963 30.5476 29.5279 30.5476 21.7325C30.5476 13.9372 24.3219 7.56883 16.5813 7.33895V10.3768C22.647 10.6058 27.5115 15.6118 27.5115 21.7325C27.5115 25.3008 25.8843 28.592 23.0473 30.7625C23.0021 30.7972 22.9504 30.8226 22.8954 30.8373C22.8404 30.852 22.783 30.8557 22.7265 30.8481C22.67 30.8406 22.6156 30.822 22.5663 30.7935C22.517 30.7649 22.4738 30.7269 22.4393 30.6816C22.4046 30.6364 22.3793 30.5848 22.3646 30.5297C22.3499 30.4747 22.3462 30.4173 22.3537 30.3608C22.3613 30.3044 22.3798 30.2499 22.4084 30.2007C22.437 30.1514 22.4749 30.1082 22.5202 30.0736C25.1409 28.0686 26.644 25.0284 26.644 21.7325C26.644 16.09 22.1689 11.4731 16.5813 11.245V36.1261ZM15.7139 1.87389C7.97325 2.10377 1.7476 8.47221 1.7476 16.2675C1.7476 24.0627 7.97325 30.4312 15.7139 30.6611V1.87389Z"
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-width="0.6"></path>
+            </svg>
+            UI/UX Design
+          </div>
+          <div class="collapse-content">
+            <p class="mb-4">
+              Let's collaborate to make high-impact, seamless flows for your
+              customers. We Lets create meaningful experiences for your users
+              that ensure your product is top-notch.
+            </p>
+          </div>
+        </div>
+        <div class="h-px w-full bg-blue-800"></div>
+        <div class="collapse collapse-arrow">
+          <input type="checkbox" />
+          <div
+            class="collapse-title text-xl font-medium flex items-center gap-4"
+          >
+            <svg
+              width="35"
+              height="38"
+              viewBox="0 0 35 38"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.351 37C17.2795 37 17.209 36.9823 17.146 36.9485L1.14114 28.3605C1.07203 28.3234 1.01427 28.2683 0.974003 28.201C0.933737 28.1337 0.912473 28.0567 0.912476 27.9783V10.0217C0.912473 9.94326 0.933737 9.8663 0.974003 9.79899C1.01427 9.73169 1.07203 9.67656 1.14114 9.63948L17.146 1.05153C17.209 1.0177 17.2795 1 17.3511 1C17.4226 1 17.4931 1.0177 17.5562 1.05153L33.561 9.63948C33.6301 9.67656 33.6879 9.73169 33.7281 9.79899C33.7684 9.8663 33.7897 9.94326 33.7897 10.0217V27.9783C33.7897 28.0567 33.7684 28.1337 33.7281 28.201C33.6879 28.2683 33.6301 28.3234 33.561 28.3605L17.5562 36.9485C17.4931 36.9823 17.4226 37 17.351 37ZM10.1164 32.192L17.351 36.074L24.2935 32.3488L17.1241 27.9571C17.0608 27.9184 17.0085 27.864 16.9722 27.7992C16.936 27.7345 16.9169 27.6615 16.9169 27.5873L16.9171 19.7515L10.3411 23.5478L10.1164 32.192ZM17.7844 27.3443L25.1787 31.8738L32.9221 27.7189V19.3691L24.9942 23.6751C24.929 23.7106 24.8558 23.7287 24.7815 23.7277C24.7073 23.7268 24.6346 23.7068 24.5703 23.6697L17.7845 19.7516L17.7844 27.3443ZM1.77995 27.7189L9.26057 31.7328L9.48021 23.2824C9.48215 23.2081 9.5031 23.1357 9.54106 23.0719C9.57901 23.0081 9.63271 22.9551 9.697 22.918L16.4835 19.0002L9.90736 15.2031L2.07575 19.4573C1.98547 19.5066 1.88058 19.522 1.77995 19.5008V27.7189ZM18.2184 19.0003L24.7937 22.7969L32.6263 18.5427C32.7166 18.4934 32.8215 18.478 32.9221 18.4993V10.2812L25.4415 6.26728L25.2218 14.7181C25.2199 14.7923 25.199 14.8647 25.1611 14.9285C25.1231 14.9923 25.0694 15.0453 25.0051 15.0824L18.2184 19.0003ZM1.77995 10.2811V18.6308L9.7068 14.3249C9.77201 14.2894 9.84525 14.2713 9.91948 14.2722C9.99371 14.2732 10.0665 14.2932 10.1307 14.3303L16.9171 18.2489L16.9173 10.655L9.52333 6.12623L1.77995 10.2811ZM10.4086 5.6512L17.5775 10.0422C17.6408 10.081 17.6932 10.1353 17.7294 10.2001C17.7657 10.2648 17.7848 10.3378 17.7848 10.412L17.7846 18.249L24.361 14.4526L24.5856 5.80795L17.351 1.92594L10.4086 5.6512Z"
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-width="0.6"></path>
+            </svg>
+            Cloud Consulting
+          </div>
+          <div class="collapse-content">
+            <p class="mb-4">
+              We come from a background of understanding technology through the
+              regulatory lens of one of the largest banks of the United States.
+              Let's chat about what your security requirements are and outline a
+              strategy to validate your components.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3>Certified AWS Solutions Architect Professional (SAP-C02)</h3>
+    <h3>Languages: Typescript, Javascript, Go, Python, HTML, CSS</h3>
+    <h3>Frameworks: React.js, React Native, Flask</h3>
+    <h3>Databases: DynamoDB, MongoDB, PostgreSQL, Redis</h3>
+    <h3>DevOps: Git, Terraform, CDK</h3>
+  </section>
+
+  <section class="mt-48">
+    <div class="flex ml-10 mb-10 text-white items-center gap-4">
+      <span class="uppercase">03</span>
+      <div class="w-10 h-[1px] bg-white"></div>
+      <span class="uppercase">Selected Works</span>
+    </div>
+  </section>
+  <div class="grid grid-cols-2 gap-4 mx-10 mb-20">
+    <div class="flex flex-col">
+      <Image src={sqsecCover} alt="SQS Extended Client Logo" />
+      <div class="flex p-5 bg-gray-700/80 text-white items-center">
+        <span class="text-lg font-bold">SQS Extended Client</span>
+        <div class="flex-auto"></div>
+        <span class="">Open Source</span>
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <Image src={timsheetCover} alt="Timeportal" />
+      <div class="flex p-5 bg-gray-700/80 text-white items-center">
+        <span class="text-lg font-bold">Custom Timeportal</span>
+        <div class="flex-auto"></div>
+        <span class="">Aegis</span>
+      </div>
+    </div>
+  </div>
+  <section class="mx-10 my-48 text-white">
+    <div class="flex mb-10 items-center gap-4">
+      <span class="uppercase">04</span>
+      <div class="w-10 h-[1px] bg-white"></div>
+      <span class="uppercase">Why choose us?</span>
+    </div>
+    <h2 class="text-2xl my-8">Your premier option for outstanding value.</h2>
+    <div class="grid grid-cols-2 gap-10">
+      <div class="flex gap-8">
+        <div>
+          <svg
+            width="35"
+            viewBox="0 0 35 38"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.3146 37C17.243 37 17.1726 36.9823 17.1095 36.9485L1.11071 28.3636C1.03228 28.3233 0.968115 28.2599 0.926891 28.1819L0.926717 28.1816L0.926457 28.1811C0.89201 28.1163 0.874663 28.0438 0.876057 27.9704V10.0294C0.87464 9.95605 0.891988 9.88355 0.926457 9.81879L0.926717 9.81827L0.926891 9.81792C0.96808 9.74008 1.03214 9.67674 1.11045 9.63644L17.1096 1.05153C17.1727 1.0177 17.2432 1 17.3147 1C17.3863 1 17.4568 1.0177 17.5199 1.05153L33.5188 9.63627C33.5972 9.67672 33.6614 9.74024 33.7027 9.81827L33.7029 9.81879C33.7385 9.88584 33.7547 9.95819 33.7533 10.0294V27.9705C33.7548 28.0439 33.7374 28.1164 33.7029 28.1812L33.7027 28.1816L33.7025 28.182C33.6613 28.2598 33.5972 28.3232 33.5189 28.3636L17.5198 36.9486C17.4567 36.9823 17.3862 37 17.3146 37ZM2.21144 27.9698L17.3146 36.074L32.4178 27.9698L25.317 23.9865L17.5268 28.3565C17.462 28.393 17.3889 28.4121 17.3146 28.4121C17.2402 28.4121 17.1671 28.393 17.1023 28.3565L9.31211 23.9865L2.21144 27.9698ZM10.1988 23.4892L17.3146 27.481L24.4305 23.4892L17.3146 19.4973L10.1988 23.4892ZM26.2036 23.4892L32.8857 27.2377V19.7406L26.2036 23.4892ZM1.74353 19.7406V27.2377L8.42565 23.4892L1.74353 19.7406ZM18.2012 19L25.317 22.9918L32.433 19L25.3171 15.0082L18.2012 19ZM2.19635 19L9.3122 22.9918L16.4281 19L9.31229 15.0082L2.19635 19ZM10.1988 14.5108L17.3146 18.5027L24.4305 14.5108L17.3146 10.519L10.1988 14.5108ZM26.2036 14.5108L32.8857 18.2594V10.7623L26.2036 14.5108ZM1.74353 10.7623V18.2594L8.42565 14.5108L1.74353 10.7623ZM17.3146 9.58795C17.3878 9.58795 17.461 9.60643 17.5268 9.64338L25.317 14.0135L32.4178 10.0302L17.3146 1.92594L2.21144 10.0302L9.3122 14.0135L17.1024 9.64338C17.1672 9.60704 17.2403 9.58795 17.3146 9.58795Z"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="0.6"></path>
+          </svg>
+        </div>
+        <div class="flex flex-col gap-4">
+          <h3 class="text-xl">Innovative Thinking</h3>
+          <p>
+            Your problems are unique. We will never give you a cookie-cutter
+            solution. Know that we will challenge you and work to make custom
+            solutions that mold to your buisness and users.
+          </p>
+        </div>
+      </div>
+      <div class="flex gap-8">
+        <div>
+          <svg
+            width="35"
+            viewBox="0 0 32 38"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15.9653 37C15.8862 37 15.8085 36.9783 15.7408 36.9373L0.907023 27.959C0.843195 27.9203 0.790411 27.8659 0.753774 27.8009C0.717136 27.7359 0.697884 27.6626 0.697876 27.588V10.412C0.697876 10.2602 0.77725 10.1195 0.907023 10.041L15.7408 1.06272C15.8085 1.02169 15.8862 1 15.9653 1C16.0445 1 16.1222 1.02169 16.1899 1.06272L31.0237 10.041C31.0875 10.0796 31.1403 10.1341 31.177 10.1991C31.2136 10.2641 31.2328 10.3374 31.2328 10.412V27.588C31.2328 27.6626 31.2136 27.7359 31.1769 27.8009C31.1403 27.8659 31.0875 27.9204 31.0237 27.959L16.1899 36.9373C16.1222 36.9783 16.0445 37 15.9653 37ZM1.56535 27.3435L15.9653 36.0593L19.475 33.9351L9.4863 27.5634C9.42486 27.5242 9.37429 27.4701 9.33925 27.4062C9.30422 27.3423 9.28584 27.2706 9.28583 27.1977V15.4868C9.28583 15.3378 9.36234 15.1992 9.48847 15.1198L20.0282 8.48366C20.0974 8.44009 20.1775 8.41697 20.2593 8.41697C20.3411 8.41697 20.4212 8.44009 20.4904 8.48366L30.3653 14.7011V10.6565L15.9653 1.94077L1.56535 10.6565V27.3435ZM10.1533 26.9598L20.3026 33.4341L22.8982 31.8632L15.7422 27.5696C15.678 27.531 15.6248 27.4765 15.5879 27.4114C15.551 27.3462 15.5316 27.2726 15.5316 27.1977V18.6097C15.5316 18.5365 15.5501 18.4645 15.5855 18.4003C15.6208 18.3362 15.6718 18.2821 15.7337 18.243L23.1506 13.5586C23.2199 13.5148 23.3002 13.4916 23.3822 13.4916C23.4642 13.4916 23.5445 13.5148 23.6138 13.5586L30.3653 17.8227V15.7262L20.2593 9.3631L10.1533 15.7262V26.9598ZM16.3991 26.952L23.7375 31.3551L30.3653 27.3435V18.8487L23.3822 14.4383L16.3991 18.8487V26.952Z"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="0.6"></path>
+          </svg>
+        </div>
+        <div class="flex flex-col gap-4">
+          <h3 class="text-xl">Rapid Solutions</h3>
+          <p>
+            We work quickly and efficiently. Frequent feedback helps us refine
+            your product to fit exactly what you are expecting.
+          </p>
+        </div>
+      </div>
+      <div class="flex gap-8">
+        <div>
+          <svg
+            width="35"
+            viewBox="0 0 34 38"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16.6649 37C16.5891 37.0009 16.5145 36.9816 16.4487 36.944L0.826845 27.5709C0.762602 27.5324 0.709432 27.4779 0.672518 27.4127C0.635605 27.3475 0.616205 27.2739 0.616211 27.199V10.7991C0.616211 10.6523 0.701575 10.5029 0.833699 10.4269L16.4422 1.06181C16.5096 1.02137 16.5868 1 16.6654 1C16.744 1 16.8211 1.02137 16.8885 1.06181L32.4971 10.427C32.6302 10.5069 32.7132 10.6468 32.7145 10.803V27.1992C32.7146 27.2741 32.6952 27.3477 32.6582 27.4129C32.6213 27.478 32.5682 27.5325 32.5039 27.5711L16.8963 36.9357C16.8262 36.9773 16.7464 36.9994 16.6649 37ZM17.0991 20.4178V35.8023L20.1354 33.9805V18.596L17.0991 20.4178ZM13.1953 33.9805L16.2316 35.8023V20.4178L13.1953 18.596V33.9805ZM21.0029 18.0754V33.4599L24.0393 31.6381V16.2537L21.0029 18.0754ZM9.29141 31.6382L12.3277 33.46V18.0754L9.29141 16.2537V31.6382ZM24.9068 15.7331V31.1176L27.9431 29.2958V13.9114L24.9068 15.7331ZM5.38757 29.2959L8.42389 31.1177V15.7331L5.38757 13.9114V29.2959ZM28.8106 13.3908V28.7753L31.8469 26.9535V11.569L28.8106 13.3908ZM1.48373 26.9536L4.52005 28.7754V13.3908L1.48373 11.569V26.9536ZM16.6653 19.6664L31.4376 10.803L16.6653 1.93957L1.89311 10.8029L16.6653 19.6664Z"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="0.6"></path>
+          </svg>
+        </div>
+        <div class="flex flex-col gap-4">
+          <h3 class="text-xl">Wholistic Approach</h3>
+          <p>
+            We consider all aspects of your users and buisness when designing.
+            We will provide our perspective to help tailor the outcome to be the
+            absolute best fit for your goals.
+          </p>
+        </div>
+      </div>
+      <div class="flex gap-8">
+        <div>
+          <svg
+            width="35"
+            viewBox="0 0 39 36"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M29.0759 35H10.0544C9.97217 35 9.89141 34.9779 9.82059 34.936C9.74978 34.8941 9.69151 34.834 9.65187 34.7619L0.554671 18.2212C0.517364 18.1533 0.497803 18.0772 0.497803 17.9998C0.497803 17.9224 0.517364 17.8462 0.554671 17.7784L9.65187 1.238C9.69151 1.16591 9.74979 1.1058 9.8206 1.06393C9.89142 1.02207 9.97218 0.999988 10.0544 1H29.0759C29.2434 1 29.3977 1.09125 29.4784 1.238L38.5756 17.7784C38.6129 17.8462 38.6325 17.9224 38.6325 17.9998C38.6325 18.0772 38.6129 18.1533 38.5756 18.2212L29.4784 34.7619C29.4388 34.834 29.3805 34.8941 29.3097 34.936C29.2389 34.9779 29.1581 35 29.0759 35ZM15.277 34.0811H28.8042L37.6487 17.9998L36.1023 15.1881L26.9906 30.6385C26.95 30.7073 26.8921 30.7644 26.8227 30.8041C26.7533 30.8437 26.6747 30.8645 26.5948 30.8645H17.0841C17.0028 30.8645 16.923 30.843 16.8528 30.802C16.7826 30.7611 16.7244 30.7023 16.6844 30.6316L9.65472 18.2263C9.61463 18.1556 9.59405 18.0754 9.59506 17.9941C9.59608 17.9128 9.61866 17.8332 9.66051 17.7635L14.2052 10.1891H10.3147L5.62824 17.9998L15.277 34.0811ZM10.3262 34.0811H14.2053L4.6984 18.2362C4.65555 18.1648 4.63292 18.083 4.63292 17.9998C4.63292 17.9165 4.65555 17.8348 4.6984 17.7634L9.66051 9.4932C9.70133 9.42516 9.75908 9.36884 9.82813 9.32974C9.89718 9.29065 9.97518 9.27009 10.0545 9.27009H24.5273C24.6928 9.27009 24.8457 9.35922 24.9273 9.5034L29.2097 17.0748L31.025 13.8713L26.3347 6.054H8.05186L1.48167 17.9998L10.3262 34.0811ZM17.3519 29.9456H26.3324L35.5875 14.2521L28.8042 1.91891H10.3262L8.55726 5.13509H26.5948C26.7562 5.13509 26.9058 5.21972 26.9887 5.3582L31.9508 13.6284C31.9927 13.6981 32.0153 13.7777 32.0163 13.859C32.0173 13.9403 31.9967 14.0205 31.9566 14.0912L24.927 26.4965C24.8869 26.5672 24.8287 26.626 24.7585 26.6669C24.6883 26.7079 24.6085 26.7294 24.5272 26.7295H15.5293L17.3519 29.9456ZM15.0086 25.8105H24.2595L28.6814 18.0073L24.2593 10.1891H15.2767L10.5863 18.0064L15.0086 25.8105Z"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="0.6"></path>
+          </svg>
+        </div>
+        <div class="flex flex-col gap-4">
+          <h3 class="text-xl">Affordable Prices</h3>
+          <p>We provide budget-friendly, flexible pricing for our packages.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="text-center text-white p-16 w-full bg-gray-900">
+    <h1 class="text-7xl mb-10">Have an idea?</h1>
+    <button
+      class="relative inline-block p-px font-semibold leading-6 text-white no-underline bg-blue-900 shadow-2xl cursor-pointer group rounded-xl shadow-zinc-900 hover:-translate-y-0.5 transition-transform"
+    >
+      <span class="absolute inset-0 overflow-hidden rounded-xl">
+        <span
+          class="absolute inset-0 rounded-xl bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(42,157,143,0.6)_0%,rgba(42,157,143,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        ></span>
+      </span>
+      <div
+        class="relative z-10 flex items-center px-6 py-3 space-x-2 rounded-xl bg-blue-900/50 ring-1 ring-white/10"
+      >
+        <span>Let's connect</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          aria-hidden="true"
+          data-slot="icon"
+          class="w-6 h-6"
+          ><path
+            fill-rule="evenodd"
+            d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+            clip-rule="evenodd"></path></svg
+        >
+      </div>
+      <span
+        class="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-gray-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40"
+      ></span>
+    </button>
+  </section>
+  <div class="bg-blue-950 w-full text-right text-sm text-white/80 py-3 px-10">
+    2024 © Corgo, LLC.
+  </div>
+</Layout>
