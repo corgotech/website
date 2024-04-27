@@ -1,41 +1,44 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
 
-import '@fontsource-variable/playfair-display';
+import "@fontsource-variable/playfair-display";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class="bg-blue-950">
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="We offer software consulting services, bringing best-in-class services to help companies of all sizes make impactful experiences for their users."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-blue-950">
+    <slot />
+  </body>
   <style is:global>
-   @font-face {
-    font-family: 'Satoshi Variable';
-    src: url('/satoshi-variable.ttf') format('truetype');
-    font-weight: 300 900;
-    font-style: normal;
-    font-display: block;
-  }
+    @font-face {
+      font-family: "Satoshi Variable";
+      src: url("/satoshi-variable.ttf") format("truetype");
+      font-weight: 300 900;
+      font-style: normal;
+      font-display: block;
+    }
 
-  @font-face {
-    font-family: 'Satoshi Variable Italic';
-    src: url('/satoshi-variableitalic.ttf') format('truetype');
-    font-weight: 300 900;
-    font-style: italic;
-    font-display: block;
-  }
+    @font-face {
+      font-family: "Satoshi Variable Italic";
+      src: url("/satoshi-variableitalic.ttf") format("truetype");
+      font-weight: 300 900;
+      font-style: italic;
+      font-display: block;
+    }
   </style>
 </html>
