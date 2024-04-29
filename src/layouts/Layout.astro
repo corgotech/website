@@ -1,11 +1,16 @@
 ---
+import { ViewTransitions } from "astro:transitions";
+import Navbar from "../components/Navbar.astro";
+
+import "@fontsource-variable/playfair-display";
+import "astro-breadcrumbs/breadcrumbs.css";
+import Container from "../components/Container.astro";
+
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
-
-import "@fontsource-variable/playfair-display";
 ---
 
 <!doctype html>
@@ -20,25 +25,32 @@ import "@fontsource-variable/playfair-display";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ViewTransitions />
   </head>
   <body class="bg-blue-950">
-    <slot />
-  </body>
-  <style is:global>
-    @font-face {
-      font-family: "Satoshi Variable";
-      src: url("/satoshi-variable.ttf") format("truetype");
-      font-weight: 300 900;
-      font-style: normal;
-      font-display: block;
-    }
+    <Navbar />
+    <Container>
+      <slot />
+    </Container>
+    <div class="bg-blue-950 w-full text-right text-sm text-white/80 py-3 px-10">
+      2024 © Corgo, LLC.
+    </div>
+    <style is:global>
+      @font-face {
+        font-family: "Satoshi Variable";
+        src: url("/satoshi-variable.ttf") format("truetype");
+        font-weight: 300 900;
+        font-style: normal;
+        font-display: block;
+      }
 
-    @font-face {
-      font-family: "Satoshi Variable Italic";
-      src: url("/satoshi-variableitalic.ttf") format("truetype");
-      font-weight: 300 900;
-      font-style: italic;
-      font-display: block;
-    }
-  </style>
+      @font-face {
+        font-family: "Satoshi Variable Italic";
+        src: url("/satoshi-variableitalic.ttf") format("truetype");
+        font-weight: 300 900;
+        font-style: italic;
+        font-display: block;
+      }
+    </style>
+  </body>
 </html>

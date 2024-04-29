@@ -17,19 +17,17 @@ import React from "../components/logo/React.astro";
 import Terraform from "../components/logo/Terraform.astro";
 import AWS from "../components/logo/AWS.astro";
 import Git from "../components/logo/Git.astro";
-import Navbar from "../components/Navbar.astro";
 import SAPLogo from "../assets/sap-c02.png";
 ---
 
 <Layout title="Corgo">
-  <Navbar />
-  <section class="px-32 text-white pt-32">
+  <section class="lg:px-32 md:px-16 px-0">
     <div class="flex mb-6 text-white items-center gap-4">
       <span class="uppercase">01</span>
       <div class="w-10 h-[1px] bg-white"></div>
       <span class="uppercase">This is Corgo</span>
     </div>
-    <h1 class="text-7xl">
+    <h1 class="text-5xl md:text-7xl">
       Designing digital solutions with an <span
         class="font-serif italic pr-3 text-yellow-300">extreme</span
       > focus on humanized customer experiences.
@@ -72,24 +70,26 @@ import SAPLogo from "../assets/sap-c02.png";
     </button>
   </section>
 
-  <section class="flex gap-8 justify-center mt-32 mb-48">
+  <section
+    class="grid grid-cols-2 md:grid-cols-4 gap-8 justify-center mt-32 mb-48 max-w-screen-lg mx-auto"
+  >
     <div
-      class="p-4 rounded-xl bg-blue-900/30 ring-1 ring-white/10 shadow-lg text-blue-100/60 w-48 h-20 flex items-center"
+      class="p-4 rounded-xl bg-blue-900/30 ring-1 ring-white/10 shadow-lg text-blue-100/60 w-full h-20 flex items-center"
     >
       <CapitalOne />
     </div>
     <div
-      class="p-4 rounded-xl bg-blue-900/30 ring-1 ring-white/10 shadow-lg text-blue-100/60 w-48 h-20 flex items-center"
+      class="p-4 rounded-xl bg-blue-900/30 ring-1 ring-white/10 shadow-lg text-blue-100/60 w-full h-20 flex items-center"
     >
       <BAH />
     </div>
     <div
-      class="p-4 rounded-xl bg-blue-900/30 ring-1 ring-white/10 shadow-lg text-blue-100/60 w-48 h-20 flex items-center"
+      class="p-4 rounded-xl bg-blue-900/30 ring-1 ring-white/10 shadow-lg text-blue-100/60 w-full h-20 flex items-center"
     >
       <Aegis />
     </div>
     <div
-      class="p-4 rounded-xl bg-blue-900/30 ring-1 ring-white/10 shadow-lg text-blue-100/60 w-48 h-20 flex items-center"
+      class="p-4 rounded-xl bg-blue-900/30 ring-1 ring-white/10 shadow-lg text-blue-100/60 w-full h-20 flex items-center"
     >
       <NSA />
     </div>
@@ -355,7 +355,4 @@ import SAPLogo from "../assets/sap-c02.png";
       class="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-gray-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40"
     ></span>
   </section>
-  <div class="bg-blue-950 w-full text-right text-sm text-white/80 py-3 px-10">
-    2024 © Corgo, LLC.
-  </div>
 </Layout>
