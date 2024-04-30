@@ -23,14 +23,19 @@ entries.sort((a, b) => {
       <a href={`/work/${e.slug}`} class="group">
         <div class="flex flex-col relative rounded-xl overflow-clip shadow-xl group-hover:cursor-pointer group-hover:-translate-y-1 transition-all">
           <Image src={e.data.image!} alt={e.data.title} />
-          <div class="absolute bottom-0 w-full flex p-5 group-hover:py-10 transition-all delay-75 bg-gray-900/50 text-white items-center">
+          <div class="lg:absolute relative lg:bottom-0 w-full flex gap-2 p-5 group-hover:py-10 transition-all delay-75 bg-gray-900/50 text-white items-center">
             <div class="flex flex-col">
+              <span class="text-sm whitespace-nowrap flex md:hidden">
+                {e.data.client}
+              </span>
               <span class="text-lg font-bold">{e.data.title}</span>
-              <span class="text-sm italic">{e.data.tags.join(", ")}</span>
+              <span class="text-xs italic">{e.data.tags.join(", ")}</span>
             </div>
 
             <div class="flex-auto" />
-            <span>{e.data.client}</span>
+            <span class="whitespace-nowrap hidden md:flex">
+              {e.data.client}
+            </span>
           </div>
         </div>
       </a>
