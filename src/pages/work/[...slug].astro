@@ -16,8 +16,9 @@ const { Content } = await entry.render();
 ---
 
 <Layout title={entry.data.title}>
-  <section class="pt-32 mb-20">
+  <section class="mb-20">
     <Breadcrumbs />
+
     <h1>{entry.data.title}</h1>
   </section>
   <Content />

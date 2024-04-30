@@ -1,8 +1,9 @@
 ---
-import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import sqsecCover from "../assets/sqsec-cover.png";
-import timsheetCover from "../assets/aegis-timesheet-cover.png";
+
+import Layout from "../layouts/Layout.astro";
+import ConnectButton from "../components/ConnectButton.astro";
+import TitleLabel from "../components/TitleLabel.astro";
 
 import CapitalOne from "../components/logo/CapitalOne.astro";
 import BAH from "../components/logo/BAH.astro";
@@ -18,15 +19,12 @@ import Terraform from "../components/logo/Terraform.astro";
 import AWS from "../components/logo/AWS.astro";
 import Git from "../components/logo/Git.astro";
 import SAPLogo from "../assets/sap-c02.png";
+import WorkEntries from "../components/WorkEntries.astro";
 ---
 
 <Layout title="Corgo">
-  <section class="lg:px-32 md:px-16 px-0">
-    <div class="flex mb-6 text-white items-center gap-4">
-      <span class="uppercase">01</span>
-      <div class="w-10 h-[1px] bg-white"></div>
-      <span class="uppercase">This is Corgo</span>
-    </div>
+  <section class="lg:px-32 md:px-16 px-0 md:pt-16 pt-0">
+    <TitleLabel index="01" title="This is Corgo" />
     <h1 class="text-5xl md:text-7xl">
       Designing digital solutions with an <span
         class="font-serif italic pr-3 text-yellow-300">extreme</span
@@ -39,69 +37,24 @@ import SAPLogo from "../assets/sap-c02.png";
       your customers.
     </p>
     <br />
-    <button
-      class="relative inline-block p-px font-semibold leading-6 text-white no-underline bg-blue-900 shadow-2xl cursor-pointer group rounded-xl shadow-zinc-900 hover:-translate-y-0.5 transition-transform"
-    >
-      <span class="absolute inset-0 overflow-hidden rounded-xl">
-        <span
-          class="absolute inset-0 rounded-xl bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(42,157,143,0.6)_0%,rgba(42,157,143,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-        ></span>
-      </span>
-      <div
-        class="relative z-10 flex items-center px-6 py-3 space-x-2 rounded-xl bg-blue-900/50 ring-1 ring-white/10"
-      >
-        <span>Let's connect</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          aria-hidden="true"
-          data-slot="icon"
-          class="w-6 h-6"
-          ><path
-            fill-rule="evenodd"
-            d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
-            clip-rule="evenodd"></path></svg
-        >
-      </div>
-      <span
-        class="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-gray-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40"
-      ></span>
-    </button>
+    <ConnectButton style="blue" href="/contact" />
   </section>
 
   <section
-    class="grid grid-cols-2 md:grid-cols-4 gap-8 justify-center mt-32 mb-48 max-w-screen-lg mx-auto"
+    class="grid grid-cols-2 md:grid-cols-4 gap-8 justify-center mt-32 max-w-screen-md mx-auto"
   >
-    <div
-      class="p-4 rounded-xl bg-blue-900/30 ring-1 ring-white/10 shadow-lg text-blue-100/60 w-full h-20 flex items-center"
-    >
-      <CapitalOne />
-    </div>
-    <div
-      class="p-4 rounded-xl bg-blue-900/30 ring-1 ring-white/10 shadow-lg text-blue-100/60 w-full h-20 flex items-center"
-    >
-      <BAH />
-    </div>
-    <div
-      class="p-4 rounded-xl bg-blue-900/30 ring-1 ring-white/10 shadow-lg text-blue-100/60 w-full h-20 flex items-center"
-    >
-      <Aegis />
-    </div>
-    <div
-      class="p-4 rounded-xl bg-blue-900/30 ring-1 ring-white/10 shadow-lg text-blue-100/60 w-full h-20 flex items-center"
-    >
-      <NSA />
-    </div>
+    {
+      [CapitalOne, BAH, Aegis, NSA].map((Logo) => (
+        <div class="p-4 rounded-xl bg-blue-900/30 ring-1 ring-white/10 shadow-lg text-blue-100/60 w-full h-20 flex items-center">
+          <Logo />
+        </div>
+      ))
+    }
   </section>
 
-  <section class="mx-10">
-    <div class="flex mb-10 text-white items-center gap-4">
-      <span class="uppercase">02</span>
-      <div class="w-10 h-[1px] bg-white"></div>
-      <span class="uppercase">Our Services</span>
-    </div>
-    <div class="grid grid-cols-3 gap-12 text-white">
+  <section class="mt-48">
+    <TitleLabel index="02" title="Our Services" />
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
       <h2 class="text-3xl col-span-1">
         How can we collaborate to help your business?
       </h2>
@@ -159,7 +112,7 @@ import SAPLogo from "../assets/sap-c02.png";
           <div class="collapse-content">
             <p class="mb-4">
               Let's collaborate to make high-impact, seamless flows for your
-              customers. We consider all aspects of your users and buisness when
+              customers. We consider all aspects of your users and business when
               designing, providing our perspective to help tailor your product
               to be the absolute best fit for your clientele.
             </p>
@@ -188,16 +141,15 @@ import SAPLogo from "../assets/sap-c02.png";
           </div>
           <div class="collapse-content">
             <p class="mb-4">
-              We have years of experience optimizing and creating new
-              cloud-native applications. We also can offer our services when
-              considering the best fit for migrating existing components to the
-              cloud.
+              We have years of experience optimizing and creating cloud-native
+              applications. We also can offer our services in finding the best
+              fit for migrating existing components to the cloud.
             </p>
           </div>
         </div>
       </div>
     </div>
-    <div class="flex flex-col text-center justify-center mt-20">
+    <div class="flex flex-col text-center justify-center mt-20 text-white/60">
       <p class="text-xl">
         Certified as a <Image
           src={SAPLogo}
@@ -281,60 +233,20 @@ import SAPLogo from "../assets/sap-c02.png";
   </section>
 
   <section class="mt-48">
-    <div class="flex ml-10 mb-10 text-white items-center gap-4">
-      <span class="uppercase">03</span>
-      <div class="w-10 h-[1px] bg-white"></div>
-      <span class="uppercase">Selected Works</span>
-    </div>
+    <TitleLabel index="03" title="Selected Works" />
+    <WorkEntries featured />
+    <a
+      href="/work"
+      class="flex justify-center mt-10 text-xl underline font-semibold"
+      >See more of our work</a
+    >
   </section>
-  <div class="grid grid-cols-2 gap-4 mx-10 mb-20">
-    <div class="flex flex-col">
-      <Image src={sqsecCover} alt="SQS Extended Client Logo" />
-      <div class="flex p-5 bg-gray-700/80 text-white items-center">
-        <span class="text-lg font-bold">SQS Extended Client</span>
-        <div class="flex-auto"></div>
-        <span class="">Open Source</span>
-      </div>
-    </div>
-    <div class="flex flex-col">
-      <Image src={timsheetCover} alt="Timeportal" />
-      <div class="flex p-5 bg-gray-700/80 text-white items-center">
-        <span class="text-lg font-bold">Custom Timeportal</span>
-        <div class="flex-auto"></div>
-        <span class="">Aegis</span>
-      </div>
-    </div>
-  </div>
+
   <section
-    class="text-center text-white p-16 w-[90%] mx-auto bg-gray-900/60 my-20 rounded-xl shadow-xl shadow-zinc-900 relative overflow-hidden"
+    class="text-center text-white p-16 w-[90%] mx-auto bg-gray-900/60 mt-48 mb-32 rounded-xl shadow-xl shadow-zinc-900 relative overflow-hidden"
   >
     <h1 class="text-7xl mb-10 relative z-10">Have an idea?</h1>
-    <button
-      class="relative inline-block p-px font-semibold leading-6 text-white no-underline bg-gray-900 shadow-2xl cursor-pointer group rounded-xl shadow-zinc-900 hover:-translate-y-0.5 transition-transform z-10"
-    >
-      <span class="absolute inset-0 overflow-hidden rounded-xl">
-        <span
-          class="absolute inset-0 rounded-xl bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(116,155,150,0.6)_0%,rgba(116,155,150,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-        ></span>
-      </span>
-      <div
-        class="relative z-10 flex items-center px-6 py-3 space-x-2 rounded-xl bg-blue-900/50 ring-1 ring-white/10"
-      >
-        <span>Let's connect</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          aria-hidden="true"
-          data-slot="icon"
-          class="w-6 h-6"
-          ><path
-            fill-rule="evenodd"
-            d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
-            clip-rule="evenodd"></path></svg
-        >
-      </div>
-    </button>
+    <ConnectButton style="gray" href="/contact" />
     <div class="absolute -top-20 -right-20 text-blue-300/10 z-1">
       <svg
         width="20rem"

@@ -1,0 +1,39 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+interface Props {
+  featured?: boolean;
+}
+
+const { featured } = Astro.props;
+
+const entries = await getCollection(
+  "work",
+  featured ? ({ data }) => data.featured : () => true
+);
+entries.sort((a, b) => {
+  return b.data.date.getTime() - a.data.date.getTime();
+});
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  {
+    entries.map((e) => (
+      <a href={`/work/${e.slug}`} class="group">
+        <div class="flex flex-col relative rounded-xl overflow-clip shadow-xl group-hover:cursor-pointer group-hover:-translate-y-1 transition-all">
+          <Image src={e.data.image!} alt={e.data.title} />
+          <div class="absolute bottom-0 w-full flex p-5 group-hover:py-10 transition-all delay-75 bg-gray-900/50 text-white items-center">
+            <div class="flex flex-col">
+              <span class="text-lg font-bold">{e.data.title}</span>
+              <span class="text-sm italic">{e.data.tags.join(", ")}</span>
+            </div>
+
+            <div class="flex-auto" />
+            <span>{e.data.client}</span>
+          </div>
+        </div>
+      </a>
+    ))
+  }
+</div>

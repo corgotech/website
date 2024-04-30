@@ -1,16 +1,12 @@
 ---
-import { Image } from "astro:assets";
-import { getCollection } from "astro:content";
-
 import Layout from "../../layouts/Layout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
-
-const entries = await getCollection("work");
+import WorkEntries from "../../components/WorkEntries.astro";
 ---
 
 <Layout title="Corgo">
-  <section class="px-32 text-white text-center pt-48">
-    <Breadcrumbs />
+  <Breadcrumbs />
+  <section class="text-center pt-12">
     <h1 class="text-5xl">
       Our <span class="font-serif italic text-yellow-300">Work</span>
     </h1>
@@ -20,21 +16,6 @@ const entries = await getCollection("work");
     </p>
   </section>
   <section class="mt-24">
-    <div class="grid grid-cols-2 gap-4 mx-10 mb-20">
-      {
-        entries.map((e) => (
-          <a href={`/work/${e.slug}`}>
-            <div class="flex flex-col relative rounded-xl overflow-clip shadow-xl hover:cursor-pointer">
-              <Image src={e.data.image!} alt={e.data.title} />
-              <div class="absolute bottom-0 w-full flex p-5 bg-gray-900/50 text-white items-center">
-                <span class="text-lg font-bold">{e.data.title}</span>
-                <div class="flex-auto" />
-                <span class="">Open Source</span>
-              </div>
-            </div>
-          </a>
-        ))
-      }
-    </div>
+    <WorkEntries />
   </section>
 </Layout>

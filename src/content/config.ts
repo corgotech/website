@@ -9,6 +9,8 @@ export const collections = {
         client: z.string(),
         tags: z.array(z.string()),
         image: image(),
+        date: z.date(),
+        featured: z.boolean().optional(),
       }),
   }),
 };
