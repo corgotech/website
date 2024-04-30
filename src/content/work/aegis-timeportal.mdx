@@ -2,12 +2,40 @@
 title: Custom Timeportal
 client: Aegis
 tags:
-  - MongoDB
+  - Javascript
   - Node.js
+  - MongoDB
+  - Express
+  - Bootstrap
+  - Pug
 image: ../../assets/aegis-timeportal-cover.png
 date: 2022-03-01
 ---
 
-Created a fully custom timeportal system. It supports a wide array of actions around managing, viewing, approving, and querying timesheets for employees.
+<h2 class="text-xl font-semibold">Description</h2>
 
-Implemented role-based access control with levels for Admin, Manager, Accountant, and Employee. Managers were only able to view and approve any of their direct reports time sheets. Accountants had full view access to the system, and had additional export access to extract time information into Quickbooks. Employees were able to modify their timesheet and
+We worked with Aegis to created a fully qualified timeportal system. It supports a wide array of
+actions around managing, viewing, approving, and querying timesheets for their employees.
+
+<br />
+
+<h2 class="text-xl font-semibold">Features</h2>
+Implemented **role-based access control** with levels for Admin, Manager, Accountant,
+and Employee. Managers were only able to view and approve any of their direct reports
+time sheets. Accountants had full view access to the system, and had additional export
+access to extract time information into Quickbooks. Employees were able to modify
+their timesheet and submit it for approval.
+
+<br />
+
+Audit and compliance requirements were also considered. After timesheets were submitted by an
+employee, they could not be altered (even by administrators). Only the employee is able to revise
+their own timesheet. If there were disrepancies noticed by the manager who was approving the
+timesheet, it would be rejected and the employee would correct and resubmit their time.
+
+<br />
+
+Managing different reporting schedules was also a feature we added to the website and backend. The
+standard bi-weekly cadence was the default, but the administrators could change this cadence to be
+any number of days that fit the billing requirements of the contract (e.g. every 10 days, every
+month).
