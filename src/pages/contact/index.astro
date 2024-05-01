@@ -1,0 +1,204 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+---
+
+<Layout title="Corgo">
+  <Breadcrumbs />
+  <section class="text-center mt-12">
+    <h1 class="text-5xl">
+      Let's <span class="font-serif italic text-yellow-300">Chat</span>
+    </h1>
+    <p class="text-white/50 text-lg mt-4">
+      We typically respond to all inquiries within 24 hours!
+    </p>
+  </section>
+  <section class="mt-12 w-full max-w-md mx-auto mb-20">
+    <form
+      action="https://api.web3forms.com/submit"
+      method="POST"
+      id="contact"
+      class="needs-validation flex flex-col gap-4"
+      data-astro-reload
+      novalidate
+    >
+      <input
+        type="hidden"
+        name="access_key"
+        value="6d64b1a1-5e11-4f25-9844-907087a6ab7d"
+      />
+
+      <input
+        type="checkbox"
+        class="hidden"
+        style="display:none"
+        name="botcheck"
+      />
+      <label class="form-control w-full">
+        <div class="label">
+          <span class="label-text text-white">What is your name?</span>
+          <span class="label-text-alt">👋</span>
+        </div>
+        <input
+          name="name"
+          type="text"
+          placeholder="Michael Scott"
+          class="input input-md input-bordered bg-transparent w-full"
+          required
+        />
+        <div class="empty-feedback text-red-400 text-sm mt-1">
+          Please provide your name.
+        </div>
+      </label>
+      <label class="form-control w-full">
+        <div class="label">
+          <span class="label-text text-white"
+            >What is the name of your organization?</span
+          >
+        </div>
+        <input
+          name="organization"
+          type="text"
+          placeholder="Dunder Mifflin Paper Co."
+          class="input input-md input-bordered bg-transparent w-full"
+        />
+      </label>
+      <label class="form-control w-full">
+        <div class="label">
+          <span class="label-text text-white">What is your email?</span>
+        </div>
+        <input
+          name="email"
+          type="email"
+          placeholder="michael@dundermifflin.com"
+          class="input input-md input-bordered bg-transparent w-full"
+          required
+        />
+        <div class="empty-feedback text-red-400 text-sm mt-1">
+          Please provide your email.
+        </div>
+        <div class="invalid-feedback text-red-400 text-sm mt-1">
+          Please provide a valid email.
+        </div>
+      </label>
+      <label class="form-control w-full">
+        <div class="label">
+          <span class="label-text text-white"
+            >What services are you looking for?</span
+          >
+        </div>
+        <input
+          name="services"
+          type="text"
+          placeholder="Cloud consulting, software development ..."
+          class="input input-md input-bordered bg-transparent w-full"
+        />
+      </label>
+      <label class="form-control">
+        <div class="label">
+          <span class="label-text text-white">Your message</span>
+        </div>
+        <textarea
+          name="message"
+          class="textarea textarea-bordered bg-transparent h-24"
+          placeholder="Hi! Can you work with me on ..."
+          required></textarea>
+        <div class="empty-feedback text-red-400 text-sm mt-1">
+          Please provide your message.
+        </div>
+      </label>
+      <button
+        type="submit"
+        class="relative inline-block p-px font-semibold leading-6 no-underline shadow-2xl cursor-pointer group rounded-xl shadow-zinc-900 hover:-translate-y-0.5 transition-transform bg-blue-900 mt-4 w-full"
+        ><span class="absolute inset-0 overflow-hidden rounded-xl">
+          <span
+            class="absolute inset-0 rounded-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(42,157,143,0.6)_0%,rgba(42,157,143,0)_75%)]"
+          ></span>
+        </span>
+        <div
+          class="relative z-10 flex items-center justify-center px-6 py-3 space-x-2 rounded-xl bg-blue-900/50 ring-1 ring-white/10"
+        >
+          Submit
+        </div>
+        <span
+          class="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-gray-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40"
+        ></span>
+      </button>
+    </form>
+    <div id="result" class="mt-10"></div>
+  </section>
+</Layout>
+
+<style>
+  .invalid-feedback,
+  .empty-feedback {
+    display: none;
+  }
+
+  .was-validated :placeholder-shown:invalid ~ .empty-feedback {
+    display: block;
+  }
+
+  .was-validated :not(:placeholder-shown):invalid ~ .invalid-feedback {
+    display: block;
+  }
+
+  .is-invalid,
+  .was-validated :invalid {
+    border-color: #dc3545;
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener(
+    "astro:page-load",
+    () => {
+      const form = document.getElementById("contact");
+      const result = document.getElementById("result");
+
+      if (form === null || result === null) {
+        throw new Error("Unable to find `form` and/or `result` elements.");
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        form.classList.add("was-validated");
+        if (!form.checkValidity()) {
+          form.querySelectorAll(":invalid")[0].focus();
+          return;
+        }
+
+        result.innerHTML = "Sending...";
+
+        fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(Object.fromEntries(new FormData(form))),
+        })
+          .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+              result.classList.add("text-green-400");
+              result.textContent = json.message;
+            } else {
+              console.log(json);
+              result.classList.add("text-red-400");
+              result.textContent = json.message;
+            }
+          })
+          .catch((error) => {
+            console.error(error);
+            result.textContent = "Something went wrong!";
+          })
+          .then(function () {
+            form.reset();
+            form.classList.remove("was-validated");
+          });
+      });
+    },
+    { once: true }
+  );
+</script>

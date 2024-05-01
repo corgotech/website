@@ -5,7 +5,7 @@ const { href, style } = Astro.props;
 <a href={href}>
   <button
     class:list={[
-      "relative inline-block p-px font-semibold leading-6 no-underline  shadow-2xl cursor-pointer group rounded-xl shadow-zinc-900 hover:-translate-y-0.5 transition-transform",
+      "relative inline-block p-px font-semibold leading-6 no-underline shadow-2xl cursor-pointer group rounded-xl shadow-zinc-900 hover:-translate-y-0.5 transition-transform",
       { "bg-blue-900": style === "blue" },
       { "bg-gray-900": style === "gray" },
     ]}
